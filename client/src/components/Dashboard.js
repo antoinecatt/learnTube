@@ -10,9 +10,7 @@ class Dashboard extends Component {
     return (
       <div>
         {/* Insert dashboard features here */}
-        <Navbar />
         <VideoList />
-        <Footer />
       </div>
     );
   }
