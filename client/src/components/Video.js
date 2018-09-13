@@ -3,23 +3,40 @@ import YouTube from "react-youtube";
 
 class Video extends Component {
   state = {
-    videoId: "Ke90Tje7VS0",
-    opts: {
-      width: "560",
-      height: "315",
-      playerVars: {
-        autoplay: 0
+    videos: [
+      {
+        videoId: "Ke90Tje7VS0",
+        opts: {
+          width: "560",
+          height: "315",
+          playerVars: {
+            autoplay: 0
+          }
+        }
+      },
+      {
+        videoId: "93p3LxR9xfM",
+        opts: {
+          width: "560",
+          height: "315",
+          playerVars: {
+            autoplay: 0
+          }
+        }
       }
-    }
+    ]
   };
+
   render() {
-    return (
+    const video = this.state.videos.map(video => (
       <YouTube
-        videoId={this.state.videoId}
-        opts={this.state.opts}
+        videoId={video.videoId}
+        opts={video.opts}
         onReady={this.onReady}
+        thumbnail={video.thumbnail}
       />
-    );
+    ));
+    return <div>{video}</div>;
   }
   _onReady(e) {
     e.target.pauseVideo();

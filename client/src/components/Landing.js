@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import VideoList from "./VideoList";
+import Video from "./Video";
 
 class Landing extends Component {
   render() {
@@ -20,6 +22,13 @@ class Landing extends Component {
                 </Link>
                 <Link to="/login" className="btn btn-lg btn-light">
                   Login
+                </Link>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <Link to="/video">
+                  <VideoList />
                 </Link>
               </div>
             </div>

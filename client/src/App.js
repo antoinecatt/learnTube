@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Landing from "./components/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import VideoPage from "./components/VideoPage";
 
 import "./App.css";
 
@@ -19,6 +20,7 @@ class App extends Component {
           <div className="container">
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route path="/video" component={VideoPage} />
           </div>
           <Footer />
         </div>
