@@ -1,31 +1,18 @@
 import React, { Component } from "react";
 import YouTube from "react-youtube";
-
+import axios from "axios";
 class Video extends Component {
   state = {
-    videos: [
-      {
-        videoId: "Ke90Tje7VS0",
-        opts: {
-          width: "560",
-          height: "315",
-          playerVars: {
-            autoplay: 0
-          }
-        }
-      },
-      {
-        videoId: "93p3LxR9xfM",
-        opts: {
-          width: "560",
-          height: "315",
-          playerVars: {
-            autoplay: 0
-          }
-        }
-      }
-    ]
+    videos: []
   };
+
+  componentDidMount() {
+    fetch("/api/video")
+      .then(res => res.json())
+      .then(videos =>
+        this.setState({ videos }, console.log("Videos fetched...", videos))
+      );
+  }
 
   render() {
     const video = this.state.videos.map(video => (

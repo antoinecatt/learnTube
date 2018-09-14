@@ -27,9 +27,7 @@ class Landing extends Component {
             </div>
             <div className="row">
               <div className="col-md-12 text-center">
-                <Link to="/video">
-                  <VideoList />
-                </Link>
+                <VideoList />
               </div>
             </div>
           </div>

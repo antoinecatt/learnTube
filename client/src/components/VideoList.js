@@ -12,7 +12,7 @@ class VideoList extends Component {
 
     return (
       <div className="display-3">
-        <Link to="/video">
+        <Link to="/api/video">
           {imgs.map(img => (
             <img src={img} alt="thumbnail" />
           ))}
